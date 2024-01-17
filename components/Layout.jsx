@@ -12,6 +12,7 @@ module.exports = function Layout({ title, children, user }) {
           rel='stylesheet'
           crossOrigin='anonymous'
         />
+        <script defer src="/scripts/delete.js" />
       </head>
       <body>
         <NavBar user={user} />
