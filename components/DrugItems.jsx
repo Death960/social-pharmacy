@@ -1,7 +1,6 @@
 const React = require('react');
 
 function DrugItems({ drug, user }) {
-  // console.log(user, '------');
   return (
     <div className='card' style={{ width: '18rem', margin: '20px' }}>
       <img src={drug.img} className='card-img-top' alt='...' />
@@ -18,7 +17,7 @@ function DrugItems({ drug, user }) {
             {!user.isAdmin && (
               <button
                 data-id={drug.id}
-                className='btn btn-danger delete'
+                className='btn btn-danger favorite'
                 type='button'
               >
                 в корзину

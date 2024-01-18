@@ -44,7 +44,6 @@ router.post('/sign-up', async (req, res) => {
   try {
     // достаем данные из запроса клиента в req.body
     const { name, password, img } = req.body;
-    // console.log(name, password, img);
     user = await User.findOne({ where: { name } });
     if (user) {
       res.json({ message: 'Такой пользователь уже существует' });
