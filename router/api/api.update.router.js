@@ -5,9 +5,9 @@ const DrugItems = require('../../components/DrugItems');
 router.put('/:drugId', async (req, res) => {
   try {
     const { drugId } = req.params;
-    const { name, price, img } = req.body;
+    const { name, description, img, price, salePrice } = req.body;
     const [result] = await Drug.update(
-      { name, price, img },
+      { name, description, img, price, salePrice },
       { where: { id: drugId } }
     );
     if (result > 0) {
@@ -21,10 +21,11 @@ router.put('/:drugId', async (req, res) => {
 });
 router.post('/', async (req, res) => {
   try {
-    const { name, price, salePrice, img } = req.body;
+    const { name, description, price, salePrice, img } = req.body;
 
     const drug = await Drug.create({
       name,
+      description,
       price,
       salePrice,
       img,

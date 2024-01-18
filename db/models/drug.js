@@ -15,15 +15,23 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       name: {
+        allowNull: false,
+        type: DataTypes.TEXT,
+      },
+      description: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       img: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       price: {
+        allowNull: false,
         type: DataTypes.INTEGER,
       },
       salePrice: {
+        allowNull: false,
         type: DataTypes.INTEGER,
       },
       createdAt: {

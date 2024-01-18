@@ -3,7 +3,7 @@ const addForm = document.getElementById('add-drug');
 if (addForm) {
   addForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const { name, price, salePrice, img } = e.target;
+    const { name, description, price, salePrice, img } = e.target;
     const res = await fetch('/api', {
       method: 'post',
       headers: {
@@ -11,8 +11,9 @@ if (addForm) {
       },
       body: JSON.stringify({
         name: name.value,
+        description: description.value,
         price: price.value,
-        salePrice:salePrice.value,
+        salePrice: salePrice.value,
         img: img.value,
       }),
     });
