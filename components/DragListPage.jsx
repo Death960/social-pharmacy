@@ -11,6 +11,7 @@ function DrugsListPage({ title, drugs, user }) {
 
       <FormAddDrug/>
 
+
       <div className='container drug-container' style={{ display: 'flex' }}>
         {drugs.map((drug) => (
           <DrugItem key={drug.id} drug={drug} />
