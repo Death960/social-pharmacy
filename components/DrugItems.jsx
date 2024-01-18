@@ -21,10 +21,10 @@ function DrugItems({ drug }) {
         </button>
         <button
           data-id={drug.id}
-          className='btn btn-danger delete'
+          className='btn btn-danger favorite'
           type='button'
         >
-          в корзину
+          В корзину
         </button>
         <a
           href={`/update/${drug.id}`}

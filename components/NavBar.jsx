@@ -26,6 +26,7 @@ function NavBar({ user }) {
       <a className='btnmenu' href="/">Главная</a>
       <a className='btnmenu' href="/drugs">Магазин</a>
       <a className='btnmenu' href="/contacts">Контакты</a>
+      <a className='btnmenu' href="/basket">Корзина</a>
       <div className="contact_bl t_right">
         <a href="mailto:" className="head_email">bapteka@mail.ru</a>
       </div>
