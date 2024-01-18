@@ -26,9 +26,13 @@ function NavBar({ user }) {
         </div>
       </div>
       {user && <p>Hello, {user.name}</p>}
+      <a className='btnmenu' href='/profil'>
+        мой профиль
+      </a>
       <a className='btnmenu' href='/'>
         Главная
       </a>
+
       <a className='btnmenu' href='/drugs'>
         Корзина
       </a>
