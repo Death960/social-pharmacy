@@ -4,7 +4,7 @@ const Layout = require('./Layout');
 function FormUpdatePage({ title, user, drug }) {
   return (
     <Layout title={title} user={user}>
-      <div className="container">
+      <div className="container" id='updrugs'>
         <form data-id={drug.id} id="update-drug">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">

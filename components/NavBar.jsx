@@ -12,8 +12,9 @@ function NavBar({ user }) {
         <div className='city_select'>
           <select className='city-list'>
             <option>Выберите город</option>
-            <option data-class='city'>Москва</option>
+            <option data-class='city'>Сестрорецк</option>
             <option data-class='city'>Санкт-Петербург</option>
+            <option data-class='city'>Москва</option>
             <option data-class='city'>Новосибирск</option>
             <option data-class='city'>Екатеринбург</option>
             <option data-class='city'>Казань</option>
