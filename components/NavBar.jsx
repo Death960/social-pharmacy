@@ -25,14 +25,15 @@ function NavBar({ user }) {
           </select>
         </div>
       </div>
+      {user && <p>Hello, {user.name}</p>}
       <a className='btnmenu' href='/'>
         Главная
       </a>
       <a className='btnmenu' href='/drugs'>
-        Магазин
+        Корзина
       </a>
-      <a className='btnmenu' href='/contacts'>
-        Контакты
+      <a className='btnmenu' href='/about'>
+        О нас
       </a>
       {!user ? (
         <>
@@ -50,12 +51,6 @@ function NavBar({ user }) {
           </a>
         </>
       )}
-      <div className='contact_bl t_right'>
-        <a href='mailto:' className='head_email'>
-          bapteka@mail.ru
-        </a>
-      </div>
-      {user && <p>Hello, {user.name}</p>}
     </div>
   );
 }
