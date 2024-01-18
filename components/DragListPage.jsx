@@ -9,16 +9,15 @@ function DrugsListPage({ title, drugs, user }) {
     <Layout user={user} title={title}>
       <h1>Drugs Page</h1>
 
-      <FormAddDrug/>
-
+      <FormAddDrug />
 
       <div className='container drug-container' style={{ display: 'flex' }}>
         {drugs.map((drug) => (
-          <DrugItem key={drug.id} drug={drug} />
+          <DrugItem key={drug.id} drug={drug} user={user} />
         ))}
       </div>
     </Layout>
-  )
+  );
 }
 
 module.exports = DrugsListPage;

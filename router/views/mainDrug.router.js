@@ -4,9 +4,9 @@ const { Drug } = require('../../db/models');
 const DrugPage = require('../../components/DragListPage');
 
 router.get('/', async (req, res) => {
-  // try {
-    // const drugs = await Drug.findAll({ order: [['id', 'DESC']] });
-    const drugs = await Drug.findAll();
+  try {
+    const drugs = await Drug.findAll({ order: [['id', 'DESC']] });
+
     console.log(drugs);
     const html = res.renderComponent(DrugPage, {
       title: ' Drug Page',
@@ -14,9 +14,9 @@ router.get('/', async (req, res) => {
     });
 
     res.send(html);
-  // } catch ({ message }) {
-  //   res.json({ message });
-  // }
+  } catch ({ message }) {
+    res.json({ message });
+  }
 });
 
 module.exports = router;

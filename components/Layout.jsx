@@ -23,7 +23,7 @@ module.exports = function Layout({ title, children, user }) {
         <script defer src='/scripts/put.js' />
         <script defer src='/scripts/delete.js' />
         <script defer src='/scripts/add.js' />
-
+        <script defer src='/scripts/auth.js' />
       </head>
       <body>
         <NavBar user={user} />

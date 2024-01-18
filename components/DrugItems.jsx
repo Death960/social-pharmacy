@@ -1,6 +1,7 @@
 const React = require('react');
 
-function DrugItems({ drug }) {
+function DrugItems({ drug, user }) {
+  console.log(user, '------');
   return (
     <div className='card' style={{ width: '18rem', margin: '20px' }}>
       <img src={drug.img} className='card-img-top' alt='...' />
@@ -12,27 +13,38 @@ function DrugItems({ drug }) {
         <a href={`/heroes/${drug.id}`} className='btn btn-primary'>
           Подробнее
         </a>
-        <button
-          data-id={drug.id}
-          className='btn btn-danger delete'
-          type='button'
-        >
-          Уничтожить
-        </button>
-        <button
-          data-id={drug.id}
-          className='btn btn-danger delete'
-          type='button'
-        >
-          в корзину
-        </button>
-        <a
-          href={`/update/${drug.id}`}
-          className='btn btn-warning update'
-          type='button'
-        >
-          Изменить
-        </a>
+        {user && (
+          <>
+            {!user.isAdmin && (
+              <button
+                data-id={drug.id}
+                className='btn btn-danger delete'
+                type='button'
+              >
+                в корзину
+              </button>
+            )}
+            {user.isAdmin && (
+              <>
+                <button
+                  data-id={drug.id}
+                  className='btn btn-danger delete'
+                  type='button'
+                >
+                  Уничтожить
+                </button>
+
+                <a
+                  href={`/update/${drug.id}`}
+                  className='btn btn-warning update'
+                  type='button'
+                >
+                  Изменить
+                </a>
+              </>
+            )}
+          </>
+        )}
       </div>
     </div>
   );
