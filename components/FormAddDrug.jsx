@@ -6,7 +6,7 @@ function AddHeroForm() {
       <form id='add-drug'>
         <div className='mb-3'>
           <label htmlFor='exampleInputEmail1' className='form-label'>
-           название
+            название
           </label>
           <input
             name='name'
@@ -51,7 +51,7 @@ function AddHeroForm() {
         </div>
         <div className='mb-3'>
           <label htmlFor='exampleInputPassword1' className='form-label'>
-           картинка
+            картинка
           </label>
           <input
             name='img'

@@ -24,7 +24,7 @@ function FormUpdatePage({ title, user, drug }) {
               Описание
             </label>
             <input
-              // defaultValue={drug.description}
+              defaultValue={drug.description}
               name="description"
               type="text"
               class="form-control"
@@ -38,6 +38,18 @@ function FormUpdatePage({ title, user, drug }) {
             <input
               defaultValue={drug.price}
               name="price"
+              type="text"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">
+              Цена со скидкой
+            </label>
+            <input
+              defaultValue={drug.salePrice}
+              name="salePrice"
               type="text"
               class="form-control"
               id="exampleInputPassword1"
