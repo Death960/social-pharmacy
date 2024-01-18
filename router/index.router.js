@@ -5,14 +5,14 @@ const updateFormPage = require('../router/views/formUpdate.router');
 
 const apiUpdateForm = require('../router/api/api.update.router');
 const apiAddDrug = require('./api/api.update.router');
-const apiDeleteRouter = require("../router/api/api.delete.router");
+const apiDeleteRouter = require("./api/api.delete.router");
 
 
 router.use('/', mainDrugPage);
 router.use('/update', updateFormPage);
 
 router.use('/api/update', apiUpdateForm);
-router.use('/api', apiAddDrug);
+router.use('/api/add', apiAddDrug);
 router.use("/api/delete", apiDeleteRouter);
 
 

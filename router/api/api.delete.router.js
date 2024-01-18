@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Drug } = require("../../db/models");
 
-router.delete("/:drugId", async (req, res) => {
+router.delete('/:drugId', async (req, res) => {
   try {
     const { drugId } = req.params;
     const result = await Drug.destroy({ where: { id: drugId } });

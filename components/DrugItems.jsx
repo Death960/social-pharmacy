@@ -1,6 +1,6 @@
 const React = require('react');
 
-function DrugItem({ drug }) {
+function DrugItems({ drug }) {
   return (
     <div className='card' style={{ width: '18rem', margin: '20px' }}>
       <img src={drug.img} className='card-img-top' alt='...' />
@@ -38,4 +38,4 @@ function DrugItem({ drug }) {
   );
 }
 
-module.exports = DrugItem;
+module.exports = DrugItems;
