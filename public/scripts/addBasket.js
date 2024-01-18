@@ -12,7 +12,7 @@ drugContainerLike?.addEventListener("click", async (e) => {
     });
     const data = await res.json();
     if (data.message === "success") {
-      e.target.innerText = "Удалить из избранного";
+      e.target.innerText = "В корзину";
       e.target.classList.add("remove");
       e.target.classList.remove("favorite");
     } else {
