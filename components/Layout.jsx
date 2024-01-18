@@ -1,5 +1,6 @@
 const React = require('react');
 const NavBar = require('./NavBar');
+const Footer = require('./Footer');
 
 module.exports = function Layout({ title, children, user }) {
   return (
@@ -28,6 +29,7 @@ module.exports = function Layout({ title, children, user }) {
       <body>
         <NavBar user={user} />
         {children}
+        <Footer />
       </body>
     </html>
   );
