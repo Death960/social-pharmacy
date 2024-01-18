@@ -1,13 +1,15 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const mainDrugPage = require('./views/mainDrug.router');
-const updateFormPage = require('../router/views/formUpdate.router')
+const mainDrugPage = require("./views/mainDrug.router");
+const updateFormPage = require("../router/views/formUpdate.router");
 
-const apiUpdateForm = require('../router/api/api.update.router')
+const apiUpdateForm = require("../router/api/api.update.router");
+const apiDeleteRouter = require("../router/api/api.delete.router");
 
-router.use('/', mainDrugPage);
-router.use('/update', updateFormPage)
+router.use("/", mainDrugPage);
+router.use("/update", updateFormPage);
 
-router.use('/api/update', apiUpdateForm)
+router.use("/api/update", apiUpdateForm);
+router.use("/api/delete", apiDeleteRouter);
 
 module.exports = router;

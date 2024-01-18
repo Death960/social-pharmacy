@@ -15,6 +15,7 @@ module.exports = function Layout({ title, children, user }) {
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
           crossorigin="anonymous"></link>
         <script defer src='/scripts/put.js' />
+        <script defer src='/scripts/delete.js' />
       </head>
       <body>
         <NavBar user={user} />
