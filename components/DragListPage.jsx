@@ -18,7 +18,7 @@ function DrugsListPage({ title, drugs, user }) {
         ))}
       </div>
     </Layout>
-  );
+  )
 }
 
 module.exports = DrugsListPage;

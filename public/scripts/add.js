@@ -4,7 +4,7 @@ if (addForm) {
   addForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { name, description, price, salePrice, img } = e.target;
-    const res = await fetch('/api', {
+    const res = await fetch('/api/add', {
       method: 'post',
       headers: {
         'Content-type': 'application/json',
