@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../db/models');
-const configJWT = require('../../middleware/configJWT');
+const configJWT = require('../../db/seeders/middleware/configJWT');
 const generateTokens = require('../../utils/authUtils');
 
 router.post('/sign-in', async (req, res) => {

@@ -55,7 +55,7 @@ function AddHeroForm() {
           </label>
           <input
             name='img'
-            type='text'
+            type='file'
             className='form-control'
             id='exampleInputPassword1'
           />

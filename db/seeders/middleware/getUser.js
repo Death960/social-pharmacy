@@ -1,4 +1,4 @@
-const { User } = require('../db/models');
+const { User } = require('../../models');
 
 async function getUser(req, res, next) {
   if (res.locals.user) {

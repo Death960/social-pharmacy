@@ -4,18 +4,20 @@ if (addForm) {
   addForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const { name, description, price, salePrice, img } = e.target;
+
+
+    const formData = new FormData();
+
+    formData.append('img', img.files[0]);
+    formData.append('name', name.value);
+    formData.append('description', description.value);
+    formData.append('price', price.value);
+    formData.append('salePrice', salePrice.value);
+
+
     const res = await fetch('/api/add', {
       method: 'post',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: name.value,
-        description: description.value,
-        price: price.value,
-        salePrice: salePrice.value,
-        img: img.value,
-      }),
+      body: formData,
     });
     const data = await res.json();
     if (data.message === 'success') {
