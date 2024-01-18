@@ -22,10 +22,10 @@ function DrugItem({ drug }) {
           type='button'
         >
           в корзину
-          
+
         </button>
         <a
-          href={`/heroes/update-form/${drug.id}`}
+          href={`/update/${drug.id}`}
           className='btn btn-warning update'
           type='button'
         >
