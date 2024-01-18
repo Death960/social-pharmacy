@@ -1,4 +1,0 @@
-npx sequelize model:create --name OrderItem --attributes order_id:integer,drug_id:integer,count:integer
-
-npx sequelize seed:create --name user
-npx sequelize seed:create --name drug
