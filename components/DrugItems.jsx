@@ -1,7 +1,7 @@
 const React = require('react');
 
 function DrugItems({ drug, user }) {
-  console.log(user, '------');
+  // console.log(user, '------');
   return (
     <div className='card' style={{ width: '18rem', margin: '20px' }}>
       <img src={drug.img} className='card-img-top' alt='...' />
