@@ -1,15 +1,19 @@
 const router = require("express").Router();
 // const { Drug } = require("../../db/models");
-const { OrderItem } = require("../../db/models");
+const { OrderItem, Order, Drug } = require("../../db/models");
 
 const BasketPage = require("../../components/BasketPage");
 
 router.get("/", async (req, res) => {
   try {
-    const drugs = await OrderItem.findAll();
+    const order = await Order.findAll({
+      where: { status: "Заказ создан" },
+      include: { model: OrderItem, include: { model: Drug } },
+    });
+    console.log(order[0].OrderItems[0].Drug);
     const html = res.renderComponent(BasketPage, {
       title: "Корзина",
-      drugs,
+      order,
     });
     res.send(html);
   } catch ({ message }) {

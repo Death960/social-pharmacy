@@ -4,7 +4,6 @@ const { Order } = require("../../db/models");
 
 router.post("/", async (req, res) => {
   const { id } = req.body;
-  console.log(id);
   await Order.create({
     user_id: res.locals.user.id,
     status: "Заказ создан",
