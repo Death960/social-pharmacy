@@ -21,7 +21,9 @@ module.exports = function Layout({ title, children, user }) {
           crossOrigin='anonymous'
         ></link>
         <script defer src='/scripts/put.js' />
+        <script defer src='/scripts/delete.js' />
         <script defer src='/scripts/add.js' />
+
       </head>
       <body>
         <NavBar user={user} />
