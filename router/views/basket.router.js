@@ -9,7 +9,6 @@ router.get("/", async (req, res) => {
       where: { status: "Заказ создан" },
       include: { model: OrderItem, include: { model: Drug } },
     });
-    console.log(order[0].OrderItems[0].Drug);
     const html = res.renderComponent(BasketPage, {
       title: "Корзина",
       order,

@@ -25,7 +25,7 @@ function DrugItems({ drug, user }) {
             )}
             {user.isAdmin && (
               <>
-                <button 
+                <button
                   data-id={drug.id}
                   className='btn btn-danger delete'
                   type='button'

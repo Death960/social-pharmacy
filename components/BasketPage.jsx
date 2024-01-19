@@ -8,8 +8,7 @@ function BasketPage({ title, order, user }) {
       <h1>Корзина</h1>
 
       <div className="container drug-container" style={{ display: 'flex' }}>
-        {/* {drugs.map((drug) => ( */}
-        {/* //  */}
+
         <p>{order[0].OrderItems.map((oi) => <DrugItem key={oi.Drug.id} drug={oi.Drug} />)}</p>
       </div>
     </Layout>
