@@ -20,12 +20,12 @@ function DrugItems({ drug, user }) {
                 className='btn btn-danger favorite'
                 type='button'
               >
-                в корзину
+                В корзину
               </button>
             )}
             {user.isAdmin && (
               <>
-                <button
+                <button 
                   data-id={drug.id}
                   className='btn btn-danger delete'
                   type='button'

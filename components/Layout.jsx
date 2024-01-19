@@ -10,7 +10,7 @@ module.exports = function Layout({ title, children, user }) {
         <link rel='stylesheet' href='/styles/style.css' />
         <link rel='stylesheet' href='/styles/normalize.css' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link
           href='https://fonts.googleapis.com/css2?family=Rubik&display=swap'
           rel='stylesheet'
@@ -25,6 +25,7 @@ module.exports = function Layout({ title, children, user }) {
         <script defer src='/scripts/delete.js' />
         <script defer src='/scripts/add.js' />
         <script defer src='/scripts/auth.js' />
+        <script defer src='/scripts/addBasket.js' />
       </head>
       <body>
         <NavBar user={user} />

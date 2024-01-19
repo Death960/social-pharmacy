@@ -32,8 +32,7 @@ function NavBar({ user }) {
       <a className='btnmenu' href='/'>
         Главная
       </a>
-
-      <a className='btnmenu' href='/drugs'>
+      <a className='btnmenu' href='/basket'>
         Корзина
       </a>
       <a className='btnmenu' href='/about'>
