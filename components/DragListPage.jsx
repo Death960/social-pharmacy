@@ -10,12 +10,11 @@ function DrugsListPage({ title, drugs, user }) {
       <h1>Drugs Page</h1>
       {user && user.isAdmin && (<><FormAddDrug /></>)}
       <div className='babaralist'>
-        {user && (<>
-          <div className='container drug-container' style={{ display: 'flex' }}>
-            {drugs.map((drug) => (
-              <DrugItem key={drug.id} drug={drug} user={user} />
-            ))}
-          </div></>)}
+        <div className='container drug-container' style={{ display: 'flex' }}>
+          {drugs.map((drug) => (
+            <DrugItem key={drug.id} drug={drug} user={user} />
+          ))}
+        </div>
       </div>
     </Layout>
   );
