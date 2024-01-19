@@ -12,10 +12,12 @@ const apiDeleteRouter = require("./api/api.delete.router");
 const apiAuthRouter = require("./api/api.auth.router");
 const apiBasketRouter = require("./api/api.basket.router");
 
-router.use("/", mainDrugPage);
+
 router.use("/update", updateFormPage);
 router.use("/auth", authRouter);
 router.use("/basket", BasketPage);
+router.use("/about", aboutRouter);
+router.use("/profil", userRouter);
 
 router.use("/api/update", apiUpdateForm);
 router.use("/api/add", apiAddDrug);
@@ -24,9 +26,6 @@ router.use("/api/auth", apiAuthRouter);
 router.use("/api/addBasket", apiBasketRouter);
 
 router.use("/", mainDrugPage);
-router.use("/auth", authRouter);
-router.use("/about", aboutRouter);
 
-router.use("/profil", userRouter);
 
 module.exports = router;
