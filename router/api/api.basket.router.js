@@ -1,17 +1,25 @@
 const router = require("express").Router();
 const { OrderItem } = require("../../db/models");
-const { Order } = require("../../db/models");
+const { Order,Drug } = require("../../db/models");
 
 router.post("/", async (req, res) => {
   const { id } = req.body;
-  await Order.create({
-    user_id: res.locals.user.id,
-    status: "Заказ создан",
-    sum: 0,
-  });
+  const user = res.locals.user
+  let order = await Order.findOne({where:{user_id:user.id,status:"Заказ создан"}})
+  if(!order){
+   order = await Order.create({
+      user_id: res.locals.user.id,
+      status: "Заказ создан",
+      sum: 0,
+    });
+  }
+
   try {
-    if (Order) {
-      await OrderItem.create({ order_id: 1, drug_id: id });
+    const drug = await Drug.findOne({where:{id}})
+    if (order) {
+      await OrderItem.create({ order_id: order.id, drug_id: id });
+      order.sum+= drug.price
+      order.save()
       res.json({ message: "success" });
     }
   } catch ({ message }) {
