@@ -104,5 +104,29 @@ body {
 }
 
 .yandexmap {
-  margin: 50px 5px 20px 5px;
+  margin: 20px 5px 20px 5px;
+}
+
+.userImage {
+  width: 250px;
+  height: 300px;
+}
+
+.profileContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start
+}
+
+.profileTitle {
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  list-style: none;
+  box-sizing: border-box;
+  outline: none;
+  padding: 10px 25px;
+  margin: 0 5px;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
 }
