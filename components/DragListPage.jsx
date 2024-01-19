@@ -7,7 +7,6 @@ const DrugItem = require('./DrugItems');
 function DrugsListPage({ title, drugs, user }) {
   return (
     <Layout user={user} title={title}>
-      <h1>Drugs Page</h1>
       {user && user.isAdmin && (<><FormAddDrug /></>)}
       <div className='babaralist'>
         <div className='container drug-container' style={{ display: 'flex' }}>
