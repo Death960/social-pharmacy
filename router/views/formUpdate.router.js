@@ -11,7 +11,7 @@ router.get('/:drugId', async (req, res) => {
       title: ' Update drug page',
       drug,
     });
-    console.log(html);
+
     res.send(html);
   } catch ({ message }) {
     res.json({ message });

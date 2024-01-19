@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const { User } = require('../../db/models');
-const configJWT = require('../../middleware/configJWT');
+const configJWT = require('../../db/seeders/middleware/configJWT');
 const generateTokens = require('../../utils/authUtils');
 
 router.post('/sign-in', async (req, res) => {
@@ -44,7 +44,6 @@ router.post('/sign-up', async (req, res) => {
   try {
     // достаем данные из запроса клиента в req.body
     const { name, password, img } = req.body;
-    // console.log(name, password, img);
     user = await User.findOne({ where: { name } });
     if (user) {
       res.json({ message: 'Такой пользователь уже существует' });
@@ -75,8 +74,8 @@ router.post('/sign-up', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-    res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
-    res.redirect('/');
-  });
+  res.clearCookie(configJWT.access.type).clearCookie(configJWT.refresh.type);
+  res.redirect('/');
+});
 
 module.exports = router;

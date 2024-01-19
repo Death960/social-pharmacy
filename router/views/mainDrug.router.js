@@ -5,8 +5,6 @@ const DrugPage = require("../../components/DragListPage");
 router.get("/", async (req, res) => {
   try {
     const drugs = await Drug.findAll({ order: [["id", "DESC"]] });
-
-      console.log(drugs);
     const html = res.renderComponent(DrugPage, {
       title: " Drug Page",
       drugs,

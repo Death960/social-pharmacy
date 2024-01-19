@@ -2,7 +2,6 @@ const drugContainer = document.querySelector('.drug-container');
 
 if (drugContainer) {
   drugContainer.addEventListener('click', async (e) => {
-    console.log('click');
     if (e.target.classList.contains('delete')) {
       const answer = confirm('Подтвердите удаление');
       if (answer) {

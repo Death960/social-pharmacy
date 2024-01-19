@@ -1,6 +1,18 @@
 const router = require('express').Router();
 const { Drug } = require('../../db/models');
 const DrugItems = require('../../components/DrugItems');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images');
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
 
 router.put('/:drugId', async (req, res) => {
   try {
@@ -19,16 +31,19 @@ router.put('/:drugId', async (req, res) => {
     res.json({ message });
   }
 });
-router.post('/', async (req, res) => {
+router.post('/', upload.single('img'), async (req, res) => {
+  console.log('11111111111111');
   try {
-    const { name, description, price, salePrice, img } = req.body;
+    const { name, description, price, salePrice } = req.body;
+    const newFileUrl = `/images/${req.file.originalname}`;
 
     const drug = await Drug.create({
       name,
       description,
       price,
       salePrice,
-      img,
+      img: newFileUrl,
+      user_id: res.locals.user.id,
     });
     const html = res.renderComponent(DrugItems, { drug }, { doctype: false });
     res.json({
