@@ -6,8 +6,8 @@ function DrugItems({ drug, user }) {
       <img src={drug.img} className='card-img-top' alt='...' />
       <div className='card-body'>
         <h5 className='card-title'>{drug.name}</h5>
-        <h5 className='card-title'>{drug.price}</h5>
-        <h5 className='card-title'>{drug.salePrice}</h5>
+        <h5 className='card-title'>Цена: {drug.price}</h5>
+        <h5 className='card-title'>Цена со скидкой: {drug.salePrice}</h5>
 
         <a href={`/heroes/${drug.id}`} className='btn btn-primary'>
           Подробнее

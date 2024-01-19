@@ -26,7 +26,6 @@ function NavBar({ user }) {
           </select>
         </div>
       </div>
-      {user && <p>Hello, {user.name}</p>}
       <a className='btnmenu' href='/profil'>
         мой профиль
       </a>
