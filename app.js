@@ -20,8 +20,5 @@ app.use(verifyAccessToken);
 app.use(getUser);
 app.use('/', router); // за юзал!!
 
-// app.get('/', (req, res) => {
-//   res.send('hello');
-// });//проверил работу сервера/вспомнил сырой Get
 
 app.listen(PORT, () => console.log(`You shall not pass on port ${PORT}`));

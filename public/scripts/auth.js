@@ -27,7 +27,7 @@ if (singInForm) {
 if (singUpForm) {
   singUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const { name, password, img } = e.target;
+    const { name, email, password, confirmPassword, img } = e.target;
     const res = await fetch('/api/auth/sign-up', {
       method: 'post',
       headers: {
@@ -35,7 +35,9 @@ if (singUpForm) {
       },
       body: JSON.stringify({
         name: name.value,
+        email: email.value,
         password: password.value,
+        confirmPassword: confirmPassword.value,
         img: img.value,
       }),
     });
