@@ -156,3 +156,14 @@ body {
   border: none;
   text-decoration: none;
 }
+
+.container {
+  margin-top: 50px;
+}
+
+.notfound {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-size: cover;
+}

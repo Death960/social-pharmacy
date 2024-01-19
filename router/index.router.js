@@ -5,6 +5,7 @@ const authRouter = require("./views/auth.router");
 const BasketPage = require("./views/basket.router");
 const aboutRouter = require("./views/about.router");
 const userRouter = require("./views/user.router");
+const notFound = require('./views/notfound.router')
 
 const apiUpdateForm = require("../router/api/api.update.router");
 const apiAddDrug = require("./api/api.update.router");
@@ -26,6 +27,7 @@ router.use("/api/auth", apiAuthRouter);
 router.use("/api/addBasket", apiBasketRouter);
 
 router.use("/", mainDrugPage);
+router.use('/*', notFound)
 
 
 module.exports = router;
