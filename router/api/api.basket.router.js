@@ -1,13 +1,15 @@
 const router = require("express").Router();
 const { OrderItem } = require("../../db/models");
-const { Order,Drug } = require("../../db/models");
+const { Order, Drug } = require("../../db/models");
 
 router.post("/", async (req, res) => {
   const { id } = req.body;
-  const user = res.locals.user
-  let order = await Order.findOne({where:{user_id:user.id,status:"Заказ создан"}})
-  if(!order){
-   order = await Order.create({
+  const user = res.locals.user;
+  let order = await Order.findOne({
+    where: { user_id: user.id, status: "Заказ создан" },
+  });
+  if (!order) {
+    order = await Order.create({
       user_id: res.locals.user.id,
       status: "Заказ создан",
       sum: 0,
@@ -15,11 +17,11 @@ router.post("/", async (req, res) => {
   }
 
   try {
-    const drug = await Drug.findOne({where:{id}})
+    const drug = await Drug.findOne({ where: { id } });
     if (order) {
       await OrderItem.create({ order_id: order.id, drug_id: id });
-      order.sum+= drug.price
-      order.save()
+      order.sum += drug.price;
+      order.save();
       res.json({ message: "success" });
     }
   } catch ({ message }) {
@@ -27,11 +29,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:drugId", async (req, res) => {
+router.delete("/:orderId", async (req, res) => {
   try {
-    const { drugId } = req.params;
+    const user = res.locals.user;
+    const { orderId } = req.params;
+
     const result = await OrderItem.destroy({
-      where: { user_id: res.locals.user.id, drug_id: drugId },
+      where: { id: orderId },
     });
     if (result > 0) {
       res.json({ message: "success" });
