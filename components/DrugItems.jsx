@@ -9,7 +9,7 @@ function DrugItems({ drug, user }) {
         <h5 className='card-title'>Цена: {drug.price}</h5>
         <h5 className='card-title'>Цена со скидкой: {drug.salePrice}</h5>
 
-        <a href={`/heroes/${drug.id}`} className='btn btn-primary'>
+        <a href={`/${drug.id}`} className='btn btn-primary'>
           Подробнее
         </a>
         {user && (
