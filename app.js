@@ -3,6 +3,7 @@ const express = require('express'); // экспресс
 const app = express(); // вызвал экспресс
 const path = require('path'); // подключил путь
 const cookieParser = require('cookie-parser');
+require('dotenv').config()
 
 const router = require('./router/index.router'); // подключил роутер !!
 const ssr = require('./db/seeders/middleware/ssr'); // подключил мидл вар
