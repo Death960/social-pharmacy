@@ -30,6 +30,7 @@ drugContainerLike?.addEventListener("click", async (e) => {
     });
     const data = await res.json();
     if (data.message === "success") {
+      e.target.closest(".card").remove();
       e.target.innerText = "В корзину";
       e.target.classList.add("favorite");
       e.target.classList.remove("remove");
