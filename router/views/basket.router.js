@@ -1,5 +1,4 @@
 const router = require("express").Router();
-// const { Drug } = require("../../db/models");
 const { OrderItem, Order, Drug } = require("../../db/models");
 
 const BasketPage = require("../../components/BasketPage");
@@ -20,6 +19,7 @@ router.get("/", async (req, res) => {
     res.json({ message: "view basket router" });
   }
 });
+
 
 module.exports = router;
 
