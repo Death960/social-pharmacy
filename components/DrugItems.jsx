@@ -1,6 +1,7 @@
 const React = require('react');
 
-function DrugItems({ drug, user }) {
+function DrugItems({ drug, user, order }) {
+
   return (
     <div className='card' style={{ width: '18rem', margin: '20px' }}>
       <img src={drug.img} className='card-img-top' alt='...' />
@@ -22,7 +23,15 @@ function DrugItems({ drug, user }) {
               >
                 В корзину
               </button>
-            )}
+              ) 
+            }
+         {  order &&  <><button
+                data-id={order.id}
+                className='btn btn-danger remove'
+                type='button'
+              >
+                Удалить из корзины
+              </button></>}
             {user.isAdmin && (
               <>
                 <button

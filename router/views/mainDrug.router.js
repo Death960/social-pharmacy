@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
     const html = res.renderComponent(DrugItemPage, {
       title: " Drug Page",
       drugs,
+      
     });
 
     res.send(html);

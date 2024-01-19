@@ -2,6 +2,7 @@ const drugContainerLike = document.querySelector(".drug-container");
 
 drugContainerLike?.addEventListener("click", async (e) => {
   if (e.target.classList.contains("favorite")) {
+    e.preventDefault();
     const { id } = e.target.dataset;
     const res = await fetch(`/api/addBasket`, {
       method: "post",
@@ -20,14 +21,16 @@ drugContainerLike?.addEventListener("click", async (e) => {
     }
     return;
   }
+
   if (e.target.classList.contains("remove")) {
+    e.preventDefault();
     const { id } = e.target.dataset;
     const res = await fetch(`/api/addBasket/${id}`, {
       method: "delete",
     });
     const data = await res.json();
     if (data.message === "success") {
-      e.target.innerText = "В избранное";
+      e.target.innerText = "В корзину";
       e.target.classList.add("favorite");
       e.target.classList.remove("remove");
     } else {

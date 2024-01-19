@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
       where: { user_id: user.id, status: 'Заказ создан' },
       include: { model: OrderItem, include: { model: Drug } },
     });
-    console.log(order)
     const html = res.renderComponent(BasketPage, {
       title: 'Корзина',
       order,
