@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const generateTokens = require('../../../utils/authUtils');
+const generateTokens = require('../utils/authUtils');
 const configJWT = require('./configJWT');
 
 function verifyRefreshToken(req, res, next) {
@@ -10,7 +10,7 @@ function verifyRefreshToken(req, res, next) {
     const { user } = jwt.verify(refresh, 'R');
     // генерируем новую пару токенов
     const { accessToken, refreshToken } = generateTokens({
-      user: { id: user.id, img: user.img, name: user.name },
+      user: { id: user.id, img: user.img, name: user.name, email: user.email },
     });
     // дополняем объект ответа userом
     res.locals.user = user;

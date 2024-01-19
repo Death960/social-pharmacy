@@ -32,7 +32,6 @@ router.put('/:drugId', async (req, res) => {
   }
 });
 router.post('/', upload.single('img'), async (req, res) => {
-  console.log('11111111111111');
   try {
     const { name, description, price, salePrice } = req.body;
     const newFileUrl = `/images/${req.file.originalname}`;

@@ -6,9 +6,9 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config()
 
 const router = require('./router/index.router'); // подключил роутер !!
-const ssr = require('./db/seeders/middleware/ssr'); // подключил мидл вар
-const getUser = require('./db/seeders/middleware/getUser');
-const { verifyAccessToken } = require('./db/seeders/middleware/verifyJWT');
+const ssr = require('./middleware/ssr'); // подключил мидл вар
+const getUser = require('./middleware/getUser');
+const { verifyAccessToken } = require('./middleware/verifyJWT');
 const PORT = 3010; // выбрал порт
 
 app.use(cookieParser());

@@ -27,9 +27,9 @@ function NavBar({ user }) {
         </div>
       </div>
       {user && (
-      <a className='btnmenu' href='/profil'>
-        Мой профиль
-      </a>)}
+        <a className='btnmenu' href='/profil'>
+          Мой профиль
+        </a>)}
       <a className='btnmenu' href='/'>
         Главная
       </a>
@@ -45,7 +45,7 @@ function NavBar({ user }) {
             Войти
           </a>
           <a className='btnmenu' href='/auth/sign-up'>
-            Зарегестрироваться
+            Зарегистрироваться
           </a>
         </>
       ) : (
